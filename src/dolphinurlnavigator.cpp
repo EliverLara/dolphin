@@ -46,6 +46,9 @@ DolphinUrlNavigator::DolphinUrlNavigator(const QUrl &url, QWidget *parent)
                         "<link url='help:/dolphin/location-bar.html'>click here</link>. "
                         "This will open the dedicated page in the Handbook.</para>"));
 
+    setAutoFillBackground(true);
+    setBackgroundRole(QPalette::Base);
+
     DolphinUrlNavigatorsController::registerDolphinUrlNavigator(this);
 
     connect(this, &KUrlNavigator::returnPressed, this, &DolphinUrlNavigator::slotReturnPressed);

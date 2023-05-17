@@ -81,6 +81,8 @@ DolphinViewContainer::DolphinViewContainer(const QUrl &url, QWidget *parent)
     m_topLayout->setContentsMargins(0, 0, 0, 0);
 
     m_searchBox = new DolphinSearchBox(this);
+    m_searchBox->setAutoFillBackground(true);
+    m_searchBox->setBackgroundRole(QPalette::Base);
     m_searchBox->hide();
     connect(m_searchBox, &DolphinSearchBox::activated, this, &DolphinViewContainer::activate);
     connect(m_searchBox, &DolphinSearchBox::closeRequest, this, &DolphinViewContainer::closeSearchBox);
@@ -112,6 +114,8 @@ DolphinViewContainer::DolphinViewContainer(const QUrl &url, QWidget *parent)
 
     // Initialize filter bar
     m_filterBar = new FilterBar(this);
+    m_filterBar->setAutoFillBackground(true);
+    m_filterBar->setBackgroundRole(QPalette::Base);
     m_filterBar->setVisible(GeneralSettings::filterBar());
 
     connect(m_filterBar, &FilterBar::filterChanged, this, &DolphinViewContainer::setNameFilter);
@@ -149,6 +153,10 @@ DolphinViewContainer::DolphinViewContainer(const QUrl &url, QWidget *parent)
 
     // Initialize status bar
     m_statusBar = new DolphinStatusBar(this);
+    
+    m_statusBar->setAutoFillBackground(true);
+    m_statusBar->setBackgroundRole(QPalette::Base);
+
     m_statusBar->setUrl(m_view->url());
     m_statusBar->setZoomLevel(m_view->zoomLevel());
     connect(m_view, &DolphinView::urlChanged, m_statusBar, &DolphinStatusBar::setUrl);

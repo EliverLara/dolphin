@@ -23,6 +23,9 @@ DolphinTabBar::DolphinTabBar(QWidget *parent)
     setMovable(true);
     setTabsClosable(true);
 
+    setAutoFillBackground(true);
+    setBackgroundRole(QPalette::Base);
+
     m_autoActivationTimer = new QTimer(this);
     m_autoActivationTimer->setSingleShot(true);
     m_autoActivationTimer->setInterval(800);
