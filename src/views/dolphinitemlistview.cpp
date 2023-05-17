@@ -166,7 +166,7 @@ void DolphinItemListView::updateGridSize()
     m_zoomLevel = ZoomLevelInfo::zoomLevelForIconSize(QSize(iconSize, iconSize));
     KItemListStyleOption option = styleOption();
 
-    const int padding = 2;
+    const int padding = 6;
     int horizontalMargin = 0;
     int verticalMargin = 0;
 

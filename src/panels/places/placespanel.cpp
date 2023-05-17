@@ -38,6 +38,8 @@ PlacesPanel::PlacesPanel(QWidget *parent)
 
     setAutoResizeItemsEnabled(false);
 
+    setSpacing(4);
+
     setTeardownFunction([this](const QModelIndex &index) {
         slotTearDownRequested(index);
     });

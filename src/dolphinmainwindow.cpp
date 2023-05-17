@@ -2194,6 +2194,8 @@ void DolphinMainWindow::setupDockWidgets()
 
     m_placesPanel = new PlacesPanel(placesDock);
     m_placesPanel->setCustomContextMenuActions({lockLayoutAction});
+    placesDock->setContentsMargins(12,12,12,12);
+    
     placesDock->setWidget(m_placesPanel);
 
     QAction *placesAction = placesDock->toggleViewAction();
